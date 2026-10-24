@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title</title>
+    <title>WAPUR Scouting</title>
     <style>
       body {
         background-color: lightblue;
@@ -17,9 +17,29 @@
   </head>
   <body>
     <h1 id="Title">3322 WAPUR Scouting 2026</h1>
-    <p> Wow this is such a new and innovative WAPUR competition this year. I am so excited to compete at AADL on December 5th 2026.</p>
-    <a href="https://trollface.dk"><button>Scouting Lock in time</button></a>
+    <p> WAPUR WAPUR WAPUR WAPUR JUNIOR DOUBLE TRIPLE WAPUR.</p>
 
-<img src="https://myimgs.org/storage/images/66859/image-removebg-preview2.png" alt="MyIMGs" />
+
+<img id="robot" src="https://myimgs.org/storage/images/66859/image-removebg-preview2.png" alt="MyIMGs" /> 
+<img id="AADL" src="https://aadl.org/themes/custom/aadl/images/aadl-logo.jpg" alt="AADL" /> <br>
+
+    <a href="Scouting.html"><button>Scouting Lock in time</button></a>
+
+    <script>
+      const robot = document.getElementById("robot"); 
+      const aadl = document.getElementById("AADL");
+      let t = 0;
+              setInterval(() => {
+
+          t += 1;
+          robot.style.transform =
+            `translateX(${t * 3 % window.innerWidth - 500}px) rotate(${t * 3}deg)`;
+       
+
+        }, 10);
+        
+
+    </script>
+
   </body>
 </html>
