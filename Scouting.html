@@ -20,24 +20,39 @@
     <input type="checkbox" id="mobility">Mobility
     <br>
 
-<label for="Team">How many balls were shot over</label>
-<select name="Team" id="Team">
-<option value="0">All shot over</option>
-<option value="66">More than half shot over</option>
-<option value="830">Half shot over</option>
-<option value="1076">Less than half shot over</option>
-<option value="3322">None shot over</option>
-<option value="5066">5066</option>
-<option value="5067">5067</option>
-<option value="5708">5708</option>
-<option value="6101">6101</option>
-<option value="7660">7660</option>
-<option value="10656">10656</option>
+<label for="amountOfBalls">How many balls were shot over</label>
+<select name="amountOfBalls" id="amountOfBalls">
+<option value="all">All shot over</option>
+<option value="more">More than half shot over</option>
+<option value="half">Half shot over</option>
+<option value="less">Less than half shot over</option>
+<option value="none">None shot over</option>
 </select>
 <br>
 
 <label for="AutoCrates">How many crates were pushed over the line:</label>
 <input type="number" id="AutoCrates" min="0"> 
+
+</div>
+    <p id="L4">0</p>
+    <button id="L4success">L4 Success</button>
+    <button id="L4fail">L4 Down</button>
+    <br>
+    <p id="L3">0</p>
+    <button id="L3success">L3 Success</button>
+    <button id="L3fail">L3 Down</button>
+    <br>
+    <p id="L2">0</p>
+    <button id="L2success">L2 Success</button>
+    <button id="L2fail">L2 Down</button>
+    <br>
+    <p id="L1">0</p>
+    <button id="L1success">L1 Success</button>
+    <button id="L1fail">L1 Down</button>
+    
+    
+<div>
+
 
 </div>
 
@@ -59,10 +74,44 @@
 </select>
 
 <br><br>
-<input placeholder="Scouter Name">
+<input id="scouterName" placeholder="Scouter Name">
 <br><br>
-<input placeholder="Match Number">
+<input id="matchNumber" placeholder="Match Number">
 <br>
-<a href="qrCode.html"><button>Submit</button></a>
+<button id="submit">Submit</button>
+
+<script>
+    let information = ""
+    document.getElementById("submit").addEventListener("click", function() {
+        information = document.getElementById("scouterName").value + "," + document.getElementById("matchNumber").value + "," + document.getElementById("Team").value + "," + document.getElementById("mobility").checked + "," + document.getElementById("AutoCrates").value + "," + document.getElementById("amountOfBalls").value + "," + document.getElementById("mobility").checked + "," + document.getElementById("L4").innerText + "," + document.getElementById("L3").innerText + "," + document.getElementById("L2").innerText + "," + document.getElementById("L1").innerText;
+        window.location.href = "qrcode.html?data=" + information;
+    });
+
+    document.getElementById("L4success").addEventListener("click", function() {
+        document.getElementById("L4").innerText = parseInt(document.getElementById("L4").innerText) + 1;
+    });
+    document.getElementById("L4fail").addEventListener("click", function() {
+        document.getElementById("L4").innerText = parseInt(document.getElementById("L4").innerText) - 1;
+    });
+    document.getElementById("L3success").addEventListener("click", function() {
+        document.getElementById("L3").innerText = parseInt(document.getElementById("L3").innerText) + 1;
+    });
+    document.getElementById("L3fail").addEventListener("click", function() {
+        document.getElementById("L3").innerText = parseInt(document.getElementById("L3").innerText) - 1;
+    });
+    document.getElementById("L2success").addEventListener("click", function() {
+        document.getElementById("L2").innerText = parseInt(document.getElementById("L2").innerText) + 1;
+    });
+    document.getElementById("L2fail").addEventListener("click", function() {
+        document.getElementById("L2").innerText = parseInt(document.getElementById("L2").innerText) - 1;
+    });
+    document.getElementById("L1success").addEventListener("click", function() {
+        document.getElementById("L1").innerText = parseInt(document.getElementById("L1").innerText) + 1;
+    });
+    document.getElementById("L1fail").addEventListener("click", function() {
+        document.getElementById("L1").innerText = parseInt(document.getElementById("L1").innerText) - 1;
+    });
+    
+</script>
 </body>
 </html>
